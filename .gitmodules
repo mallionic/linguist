@@ -299,6 +299,9 @@
 [submodule "vendor/grammars/asciidoc.tmbundle"]
 	path = vendor/grammars/asciidoc.tmbundle
 	url = https://github.com/zuckschwerdt/asciidoc.tmbundle
+[submodule "vendor/grammars/ashley-tmlanguage"]
+	path = vendor/grammars/ashley-tmlanguage
+	url = https://github.com/mallionic/ashley-tmlanguage
 [submodule "vendor/grammars/asp-syntax-highlight"]
 	path = vendor/grammars/asp-syntax-highlight
 	url = https://github.com/nickswalker/asp-syntax-highlight.git

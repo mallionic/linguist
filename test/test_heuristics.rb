@@ -259,6 +259,7 @@ class TestHeuristics < Minitest::Test
   def test_as_by_heuristics
     assert_heuristics({
       "ActionScript" => all_fixtures("ActionScript", "*.as"),
+      "ASH (Ashley)" => all_fixtures("ASH (Ashley)", "*.as"),
       nil => all_fixtures("AngelScript", "*.as")
     })
   end
@@ -269,6 +270,13 @@ class TestHeuristics < Minitest::Test
       "AGS Script" => all_fixtures("AGS Script"),
       "Public Key" => all_fixtures("Public Key")
     }, "test.asc")
+  end
+
+  def test_ash_by_heuristics
+    assert_heuristics({
+      "ASH (Ashley)" => all_fixtures("ASH (Ashley)", "*.ash"),
+      nil => all_fixtures("AGS Script", "*.ash") + all_fixtures("KoLmafia ASH", "*.ash")
+    })
   end
 
   def test_asm_by_heuristics

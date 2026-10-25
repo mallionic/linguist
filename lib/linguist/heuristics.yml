@@ -100,6 +100,8 @@ disambiguations:
     pattern: '^\{\s*(?:application|''application'')\s*,\s*(?:[a-z]+[\w@]*|''[^'']+'')\s*,\s*\[(?:.|[\r\n])*\]\s*\}\.[ \t]*$'
 - extensions: ['.as']
   rules:
+  - language: ASH (Ashley)
+    named_pattern: ashley
   - language: ActionScript
     pattern: '^\s*(?:package(?:\s+[\w.]+)?\s+(?:\{|$)|import\s+[\w.*]+\s*;|(?:intrinsic\s+)class\s+[\w<>.]+|\s+class\s+extends\s+[\w<>.]+|(?:(?:public|protected|private|static)\s+)*(?:(?:var|const|local)\s+\w+\s*:\s*[\w<>.]+(?:\s*=.*)?\s*;|function\s+\w+\s*\((?:\s*\w+\s*:\s*[\w<>.]+\s*(,\s*\w+\s*:\s*[\w<>.]+\s*)*)?\)))'
 - extensions: ['.asc']
@@ -110,6 +112,10 @@ disambiguations:
     pattern: '^[=-]+\s|\{\{[A-Za-z]'
   - language: AGS Script
     pattern: '^(\/\/.+|((import|export)\s+)?(function|int|float|char)\s+((room|repeatedly|on|game)_)?([A-Za-z]+[A-Za-z_0-9]+)\s*[;\(])'
+- extensions: ['.ash']
+  rules:
+  - language: ASH (Ashley)
+    named_pattern: ashley
 - extensions: ['.asm']
   rules:
   - language: Assembly
@@ -1160,6 +1166,16 @@ disambiguations:
     named_pattern: json
   - language: Yacc
 named_patterns:
+  ashley:
+  - '^\s*@(?:Entry|naked|nolibc|beautycode|bits|ovr|override)\b'
+  - '\bfunc\s+[A-Za-z_]\w*\s*\([^)]*\)\s*:\s*[A-Za-z_][\w*\[\]]*'
+  - '^\s*(?:pub|priv)\s+(?:func|class|struct)\b'
+  - '^\s*(?:general|ungeneral)\s+(?:static\s+)?[A-Za-z_]\w*\s+[A-Za-z_]\w*'
+  - '^\s*extern\s+(?:u?int(?:8|16|32|64)|void\s*\*|string|cstring)\s+[A-Za-z_]\w*\s*\('
+  - '\b(?:volatile\s+)?asm\s*\{'
+  - '^\s*typedef\s+u?int(?:8|16|32|64)\s+[A-Za-z_]\w*\s*;'
+  - '^\s*define\s+[A-Za-z_]\w*\s+[^\s;]+\s*;?\s*$'
+  - '^\s*import\s+"[^"]+\.(?:ash|ah|as)"\s*;'
   cpp:
   - '^\s*#\s*include <(cstdint|string|vector|map|list|array|bitset|queue|stack|forward_list|unordered_map|unordered_set|(i|o|io)stream)>'
   - '^\s*template\s*<'

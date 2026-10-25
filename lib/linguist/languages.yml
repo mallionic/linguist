@@ -164,6 +164,19 @@ APL:
   codemirror_mode: apl
   codemirror_mime_type: text/apl
   language_id: 6
+ASH (Ashley):
+  type: programming
+  color: "#7B2FBE"
+  aliases:
+  - ashley
+  - ashc
+  extensions:
+  - ".ash"
+  - ".ah"
+  - ".as"
+  tm_scope: source.ashley
+  ace_mode: text
+  language_id: 100722885
 ASL:
   type: programming
   ace_mode: asl
